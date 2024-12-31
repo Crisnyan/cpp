@@ -34,7 +34,7 @@ void set_null(std::string& buffer)
 {
 		if (!has_chars(buffer.c_str()))
 		{
-			print("not alphanumeric string, set to None");
+			print("not a valid string, set to None");
 			buffer = "None";
 		}
 }
@@ -56,19 +56,6 @@ public:
 		m_phone_number = 0;
 	}
 };
-
-class PhoneBook
-{
-private:
-	Contact m_contact[8];
-public:
-	int		i;
-
-	PhoneBook()
-	{
-		i = 0;
-	}
-
 	void Add(int& i)
 	{
 		std::string	buffer;
@@ -103,7 +90,6 @@ public:
 		m_contact[i].m_darkest_secret = buffer;
 		print("Contact added!");
 	}
-
 	void PrintContact(const int i)	
 	{
 		int	size;
@@ -137,6 +123,22 @@ public:
 			std::cout << m_contact[i].m_nickname.substr(0, 9) << ".";
 
 	}
+
+class PhoneBook
+{
+private:
+	Contact m_contact[8];
+public:
+	int		i;
+
+	PhoneBook()
+	{
+		i = 0;
+	}
+
+	void Add(int& i);
+
+	void PrintContact(const int i)	;
 
 	void checkSpace(int& i)
 	{

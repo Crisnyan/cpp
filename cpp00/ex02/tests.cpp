@@ -39,26 +39,42 @@ int		main( void ) {
 
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	//Bucle for each mostrando el estado de las cuentas
 
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) ) {
+	//Bucle for para depositar, usa los iteradores en vez de un int
 
 		(*(it.first)).makeDeposit( *(it.second) );
 	}
 
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	//Bucle for each mostrando el estado de las cuentas otra vez
 
 	for ( acc_int_t it( acc_begin, wit_begin );
 		  it.first != acc_end && it.second != wit_end;
 		  ++(it.first), ++(it.second) ) {
+	//Bucle for para ingresar, misma logica que el bucle previo
 
 		(*(it.first)).makeWithdrawal( *(it.second) );
 	}
 
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	//Bucle for each mostrando el estado de las cuentas una ultima vez
+	
+	//CUESTIONES
+	//Donde se imprime la creacion de las cuentas y su cierre?
+	//-> Posiblemente en un constructor y destructor
+	//Que significa p_amount?
+	//-> Probablemente la p se refiera a previous, al modificar la cantidad
+	//Que son los int_t withdrawals y deposits?
+	//-> Vectores, esencialmente son arrays, .begin() y .end() son la posicion
+	//   del primer y ultimo elemento
+	//Por que es necesario size?
+	//-> vectores...
 
 	return 0;
 }

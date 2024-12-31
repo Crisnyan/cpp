@@ -1,0 +1,26 @@
+1 - Primero se crean las cuentas, todas empiezan con una cantidad determinada
+
+2 - Al finalizar la creacion de las cuentas se imprime el numero de cuentas,
+    el total ingresado, el numero de depositos y el numero de retiros
+
+3 - El archivo tests.cpp contiene tres bloques importantes: 
+    -> El primero se refiere a las cuentas y el dinero con el que empiezan
+    -> El segundo se refiere a la cantidad de dinero que se deposita
+    -> El tercero se refiere a la cantidad de dinero que se retira
+
+4 - Si la cantidad a retirar es mayor a la cantidad en la cuenta, no se permite la retirada
+
+5 - Al imprimir el estado de la cuenta se imprime:
+    -> La cantidad previa en la cuenta al deposito o el retiro
+    -> La cantidad depositada o retirada, si no se permite la retirada no se imprime mas
+    -> La cantidad despues del deposito o retiro
+    -> El numero de depositos o retiros totales de la cuenta
+
+6 - Despues de imprimir las cuentas individualmente, se imprime el valor total global de:
+    -> La cantidad total, siendo sumatorio de todas las cuentas despues de la transaccion
+    -> El numero total de depositos
+    -> El numero total de retiros
+
+7 - La funcion displayStatus imprime la cantidad, numero de depositos y retiros por cuenta
+
+8 - Al finalizar, se cierran las cuentas, con su cantidad despues de las transacciones

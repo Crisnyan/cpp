@@ -1,16 +1,17 @@
-SRC = Phonebook.cpp
+SRC = Phonebook.cpp main.cpp
 OBJ	= $(SRC:%.cpp=%.o)
+INCLUDE = Contact.hpp Phonebook.hpp
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -fsanitize=leak
+CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=leak
 NAME = Phonebook
 
 all: $(NAME)
 	
 $(NAME): $(OBJ) Makefile
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(INCLUDE) $(OBJ) -o $(NAME)
 
-$(OBJ):
-	$(CC) $(CFLAGS) -c $(SRC) $< -o $@
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)

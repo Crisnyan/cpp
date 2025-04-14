@@ -16,9 +16,11 @@ static void substitute(std::string &line, const std::string& str, std::string &s
 			line[pos++] = sub[i];
 		if (len - size > 0) {
 			line.erase(pos, len - size);
+			pos += size - len;
 		}
 		else if (len - size < 0) {
 			line.insert(pos, &sub[len]);
+			pos += size - len;
 		}
 		pos = line.find(str, pos);
 	}
@@ -28,11 +30,11 @@ static void replace(std::ifstream &file, std::ofstream &newFile, std::string &s1
 	std::string line;
 
 	while (std::getline(file, line)) {
-		if (s1 != "" && s2 == "")
+		if (s1 != "")
 			substitute(line, s1, s2);
-		else if (s1.find(s2) == std::string::npos && s2.find(s1) == std::string::npos) {
-			substitute(line, s1, s2);
-		}
+		//else if (s1.find(s2) == std::string::npos && s2.find(s1) == std::string::npos) {
+		//	substitute(line, s1, s2);
+		//}
 		newFile << line << std::endl;		
 	}
 	std::cout << "Done." << std::endl;

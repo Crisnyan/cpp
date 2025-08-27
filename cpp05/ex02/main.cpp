@@ -29,7 +29,7 @@ int main() {
 	std::cin >> cont;
 
 	try {
-		ShrubberyCreationForm SC;
+		ShrubberyCreationForm SC("mr.crab");
 		Bureaucrat bur("john", 1);
 		std::cout << std::endl;
 
@@ -52,7 +52,7 @@ int main() {
 	std::cin >> cont;
 
 	try {
-		RobotomyRequestForm RR;
+		RobotomyRequestForm RR("beemo");
 		Bureaucrat bur("john", 1);
 		std::cout << std::endl;
 
@@ -75,7 +75,7 @@ int main() {
 	std::cin >> cont;
 
 	try {
-		PresidentialPardonForm PP;
+		PresidentialPardonForm PP("hit");
 		Bureaucrat bur("john", 1);
 		std::cout << std::endl;
 

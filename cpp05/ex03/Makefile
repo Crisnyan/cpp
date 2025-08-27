@@ -1,9 +1,9 @@
-SRC = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp main.cpp
+SRC = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp main.cpp
 OBJ	= $(SRC:%.cpp=%.o)
-INCLUDE = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+INCLUDE = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=leak
-NAME = No,_you_need_from_28B,_not_28C...
+NAME = At_least_this_beats_coffee-making
 
 all: $(NAME)
 	
@@ -18,6 +18,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf *_shrubbery
 
 re: fclean all
 

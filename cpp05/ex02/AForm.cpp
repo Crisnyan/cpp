@@ -12,26 +12,27 @@ char const *AForm::NotSignedException::what() const throw() {
 	return ("Form is not signed");
 }
 
-AForm::AForm() : m_name("basic form"), m_sign_grade(150), m_execute_grade(50), m_is_signed(false) {
+AForm::AForm() : m_name("basic form"), m_sign_grade(150), m_execute_grade(50), m_is_signed(false), m_target("base") {
 	std::cout << "unparametrized constructor called" << std::endl;
 }
 
-AForm::AForm(const std::string name, const unsigned int sign, const unsigned int exec) : m_name(name), m_sign_grade(sign), m_execute_grade(exec), m_is_signed(false) { 
+AForm::AForm(const std::string name, const unsigned int sign, const unsigned int exec, const std::string &target) : m_name(name), m_sign_grade(sign), m_execute_grade(exec), m_is_signed(false), m_target(target) { 
 	std::cout << "parametrized constructor called" << std::endl;
 }
 
 AForm::~AForm() {
-	std::cout << "Destructor called for AForm with name " << m_name << ", grade requirement to be signed: " << m_sign_grade << ", grade required to be executed: " << m_execute_grade << std::endl;
+	std::cout << "Destructor called for AForm with name " << m_name << ", grade requirement to be signed: " << m_sign_grade << ", grade required to be executed: " << m_execute_grade << " with target: " << m_target << std::endl;
 }
 
-AForm::AForm(const AForm& other) : m_name(other.getName()), m_sign_grade(other.getSignGrade()), m_execute_grade(other.getExecGrade()), m_is_signed(other.getIsSign()) {
-	std::cout << "Copy operator called" << std::endl;
+AForm::AForm(const AForm& other) : m_name(other.getName()), m_sign_grade(other.getSignGrade()), m_execute_grade(other.getExecGrade()), m_is_signed(other.getIsSign()), m_target(other.getTarget()) {
+std::cout << "Copy operator called" << std::endl;
 }
 
 AForm& AForm::operator=(const AForm& other) {
 	if (this != &other)
 	{
 		m_is_signed = other.getIsSign();
+		m_target = other.getTarget();
 	}
 	return (*this);
 }
@@ -50,6 +51,10 @@ unsigned int AForm::getExecGrade() const {
 
 unsigned int AForm::getIsSign() const {
 	return (m_is_signed);
+}
+
+std::string AForm::getTarget() const {
+	return (m_target);
 }
 
 void AForm::beSigned(const Bureaucrat& bur) {
@@ -74,6 +79,6 @@ void AForm::execute(const Bureaucrat& bur) const {
 }
 
 std::ostream& operator<<(std::ostream &stream, const AForm& form) {
-	stream << form.getName() << ", grade requirement to be signed: " << form.getSignGrade() << ", grade required to be executed: " << form.getExecGrade() << " and trueness of being signed " << form.getIsSign();
+	stream << form.getName() << ", grade requirement to be signed: " << form.getSignGrade() << ", grade required to be executed: " << form.getExecGrade() << ", trueness of being signed " << form.getIsSign() << " with target: " << form.getTarget() << std::endl;
 	return (stream);
 }

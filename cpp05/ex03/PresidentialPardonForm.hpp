@@ -7,6 +7,8 @@ private:
 	void doForm(const Bureaucrat &bur) const;
 public:
 	PresidentialPardonForm();
+	~PresidentialPardonForm();
+	PresidentialPardonForm(const std::string& target);
 };
 
 #endif

@@ -7,6 +7,7 @@ private:
 	void doForm(const Bureaucrat &bur) const;
 public:
 	ShrubberyCreationForm();
+	ShrubberyCreationForm(const std::string& target);
 };
 
 #endif

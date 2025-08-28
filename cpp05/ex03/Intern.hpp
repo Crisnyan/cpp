@@ -6,10 +6,10 @@
 #include "PresidentialPardonForm.hpp"
 
 class Intern {
-public:
+private:
 	std::string forms[3];
 	AForm *(Intern::*f_ptr[3])(const std::string& target);
-
+public:
 	Intern();
 	~Intern();
 	Intern(const Intern& other);

@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrmarqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 12:55:52 by adrmarqu          #+#    #+#             */
-/*   Updated: 2025/02/18 13:25:42 by adrmarqu         ###   ########.fr       */
+/*   Created: 2025/02/18 13:05:06 by adrmarqu          #+#    #+#             */
+/*   Updated: 2025/02/18 14:11:37 by adrmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#include "ScalarConverter.hpp"
 
-#include <iostream>
-
-enum Type
+int	main(int argc, char **argv)
 {
-	CHAR = 0,
-	INT,
-	FLOAT,
-	DOUBLE,
-	NAN_VAL,
-	INF,
-	INVALID
-};
-
-class ScalarConverter
-{
-	public:
-
-		static void	convert(std::string str);
-
-	private:
-
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &other);
-		ScalarConverter	&operator=(ScalarConverter const &other);
-		~ScalarConverter();
-};
-
-#endif
+	if (argc < 2)
+		return std::cout << "Argument needed" << std::endl, 1;
+	else if (argc > 2)
+		return std::cout << "Maximum of one argument" << std::endl, 1;
+	
+	ScalarConverter::convert(argv[1]);
+	
+	return 0;
+}

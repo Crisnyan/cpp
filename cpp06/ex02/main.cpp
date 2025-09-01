@@ -10,11 +10,12 @@ int main() {
 
         while (!ptr) {
                 ptr = generate();
-                std::cout << "I tried" << std::endl;
         }
+        std::cout << "Pointer identify functions:" << std::endl;
         identify(ptr);
         identify(base);
 
+        std::cout << "Reference identify functions:" << std::endl;
         identify(*ptr);
         identify(*base);
 

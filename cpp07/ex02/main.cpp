@@ -17,7 +17,7 @@ int main() {
 	b[1] = " Morning!";
 
 	Array<std::string> c(b);
-	Array<std::string> d;
+	Array<std::string> d(42);
 
 	d = c;
 

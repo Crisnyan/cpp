@@ -27,12 +27,13 @@ public:
 
 	Array& operator=(const Array& other) {
 	if (this != &other) {
+		delete[] m_addr;
 		m_len = other.m_len;
 		m_addr = new T[m_len];
 		for (unsigned int i = 0; i < m_len; ++i)
 			m_addr[i] = other.m_addr[i];
 		}
-	return (*this);
+		return (*this);
 	};
 
 	T& operator[](int index) {

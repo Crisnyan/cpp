@@ -45,5 +45,6 @@ AForm *Intern::makeForm(const std::string& form_name, const std::string& target)
 
 	for (int i = 0; i < 3; ++i)
 		form_name == forms[i] ? (void)(form = (this->*f_ptr[i])(target)) : (void)0;
-	form ? (void)0 : (void)(std::cout << "Intern couldn't create a form with name: " << form_name << std::endl); return (form);
+	form ? (void)0 : (void)(std::cout << "Intern couldn't create a form with name: " << form_name << std::endl);
+	return (form);
 }

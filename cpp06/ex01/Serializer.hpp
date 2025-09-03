@@ -7,8 +7,8 @@ typedef unsigned long uintptr_t;
 
 class Data {
 public:
-	std::string			name;
-	unsigned int		age;
+	std::string		m_name;
+	unsigned int		m_age;
 };
 
 class Serializer {

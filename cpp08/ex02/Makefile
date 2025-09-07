@@ -1,9 +1,9 @@
 SRC = main.cpp
 OBJ	= $(SRC:%.cpp=%.o)
-INCLUDE = easyfind.hpp
+INCLUDE = MutantStack.hpp
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=leak
-NAME = Easy_Find
+NAME = Mutated_abomination
 
 all: $(NAME)
 	

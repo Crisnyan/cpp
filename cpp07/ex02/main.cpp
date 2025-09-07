@@ -17,7 +17,7 @@ int main() {
 	b[1] = " Morning!";
 
 	Array<std::string> c(b);
-	Array<std::string> d(42);
+	Array<std::string> d;
 
 	d = c;
 
@@ -29,16 +29,16 @@ int main() {
 
 	std::cout << std::endl;
 	std::cout << "Before:" << std::endl;
-	std::cout << "b:" <<b[0] << b[1] << std::endl;
-	std::cout << "c:" <<c[0] << c[1] << std::endl;
-	std::cout << "d:" <<d[0] << d[1] << std::endl;
+	std::cout << "b:" << b[0] << b[1] << std::endl;
+	std::cout << "c:" << c[0] << c[1] << std::endl;
+	std::cout << "d:" << d[0] << d[1] << std::endl;
 
 	c[1] = " Afternoon!";
 	d[1] = " Night!";
 
 	std::cout << std::endl;
 	std::cout << "After:" << std::endl;
-	std::cout << "b:" <<b[0] << b[1] << std::endl;
-	std::cout << "c:" <<c[0] << c[1] << std::endl;
-	std::cout << "d:" <<d[0] << d[1] << std::endl;
+	std::cout << "b:" << b[0] << b[1] << std::endl;
+	std::cout << "c:" << c[0] << c[1] << std::endl;
+	std::cout << "d:" << d[0] << d[1] << std::endl;
 }

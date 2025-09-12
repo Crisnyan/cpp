@@ -48,10 +48,10 @@ PmergeMe::PmergeMe(char **input) {
 }
 
 void	PmergeMe::handleProgram() {
-	double	timeV = sortAndTime(m_vector);
-	double	timeD = sortAndTime(m_deque);
+	double	timevec = sortAndTime(m_vector);
+	double	timedeq = sortAndTime(m_deque);
 	
-	display(timeV, timeD);
+	display(timevec, timedeq);
 }
 
 void	PmergeMe::checkInput(std::string str) {
@@ -98,7 +98,7 @@ void	PmergeMe::checkSign(std::string &str) {
 		throw std::invalid_argument("bad input => " + tmp);
 }
 
-void	PmergeMe::display(double v, double d) const {
+void	PmergeMe::display(double vec, double deq) const {
 	std::cout << "Before:\t" << m_input << std::endl;
 
 	std::cout << "After:\t";
@@ -108,9 +108,9 @@ void	PmergeMe::display(double v, double d) const {
 	std::cout << std::endl;
 
 	std::cout << "Time to process a range of " << m_vector.size() <<
-		" elements with std::vector<unsigned int> :  " << v << " us" << std::endl;
+		" elements with std::vector<unsigned int> :  " << vec << " us" << std::endl;
 
 	std::cout << "Time to process a range of " << m_deque.size() <<
-		" elements with std::deque<unsigned int> :  " << d << " us" << std::endl;
+		" elements with std::deque<unsigned int> :  " << deq << " us" << std::endl;
 }
 
